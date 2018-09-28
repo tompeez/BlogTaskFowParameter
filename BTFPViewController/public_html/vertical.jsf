@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="vertical.jsf" id="d1">
+        <af:form id="f1">
+            <af:panelGridLayout id="pgl1" dimensionsFrom="parent">
+                <af:gridRow marginTop="5px" height="auto" id="gr1">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
+                        <af:outputText value="Vertical #{pageFlowScope.num}" id="ot1" inlineStyle="font-size:x-large;"/>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" id="gr2">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+                        <af:outputText value="title #{pageFlowScope.title}" id="ot2"/>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" id="gr3">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+                        <af:outputText value="text #{pageFlowScope.text}" id="ot3"/>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr4">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+                        <af:outputText value="footer #{pageFlowScope.footer}" id="ot4"/>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow id="gr3" columnSpan="3">
+                    <af:gridCell id="gc5">
+                        <af:button text="Back" id="b1" action="back"/>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:form>
+    </af:document>
+</f:view>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="index">
+    <page>/index.jsf</page>
+  </view>
+  <task-flow-call id="param_page-btf">
+    <task-flow-reference>
+      <document>/WEB-INF/param_page-btf.xml</document>
+      <id>param_page-btf</id>
+    </task-flow-reference>
+    <input-parameter id="__5">
+      <name>decision</name>
+      <value>#{pageFlowScope.decision}</value>
+    </input-parameter>
+  </task-flow-call>
+  <task-flow-call id="param_page-btf1">
+    <task-flow-reference>
+      <document>/WEB-INF/param_page-btf.xml</document>
+      <id>param_page-btf</id>
+    </task-flow-reference>
+    <input-parameter id="__7">
+      <name>decision</name>
+      <value>#{pageFlowScope.decision}</value>
+    </input-parameter>
+    <input-parameter id="__8">
+      <name>num</name>
+      <value>#{pageFlowScope.num}</value>
+    </input-parameter>
+    <input-parameter id="__9">
+      <name>footer</name>
+      <value>#{pageFlowScope.footer}</value>
+    </input-parameter>
+    <input-parameter id="__10">
+      <name>text</name>
+      <value>#{pageFlowScope.text}</value>
+    </input-parameter>
+    <input-parameter id="__11">
+      <name>title</name>
+      <value>#{pageFlowScope.title}</value>
+    </input-parameter>
+  </task-flow-call>
+  <task-flow-call id="param_page-btf2">
+    <task-flow-reference>
+      <document>/WEB-INF/param_page-btf.xml</document>
+      <id>param_page-btf</id>
+    </task-flow-reference>
+    <input-parameter id="__13">
+      <name>decision</name>
+      <value>#{pageFlowScope.decision}</value>
+    </input-parameter>
+    <input-parameter id="__17">
+      <name>text</name>
+      <value>#{pageFlowScope.text}</value>
+    </input-parameter>
+  </task-flow-call>
+  <control-flow-rule id="__1">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__2">
+      <from-outcome>back</from-outcome>
+      <to-activity-id>index</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__3">
+    <from-activity-id>index</from-activity-id>
+    <control-flow-case id="__4">
+      <from-outcome>toPageNoParam</from-outcome>
+      <to-activity-id>param_page-btf</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__6">
+      <from-outcome>toPageAllParam</from-outcome>
+      <to-activity-id>param_page-btf1</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__12">
+      <from-outcome>toPageSomeTextOnly</from-outcome>
+      <to-activity-id>param_page-btf2</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+</adfc-config>

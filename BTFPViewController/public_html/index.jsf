@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="index.jsf" id="d1">
+        <af:form id="f1">
+            <af:panelGridLayout id="pgl3">
+                <af:gridRow marginTop="5px" height="100px" id="gr3">
+                    <af:gridCell marginStart="5px" columnSpan="2" marginEnd="5px" id="gc4">
+                        <af:outputText value="Task Flow Parameter" id="ot1" inlineStyle="font-size:x-large;"/>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr4">
+                    <af:gridCell marginStart="5px" width="200px" id="gc5">
+                        <af:panelGroupLayout id="pgl2" layout="vertical">
+                            <af:inputText label="Layout (v/h):" id="it1" value="#{pageFlowScope.decision}"
+                                          autoSubmit="true"></af:inputText>
+                            <af:inputText label="Title:" id="it3" value="#{pageFlowScope.title}" autoSubmit="true"></af:inputText>
+                            <af:inputText label="Text:" id="it5" value="#{pageFlowScope.text}" autoSubmit="true"></af:inputText>
+                            <af:inputText label="Footer:" id="it4" value="#{pageFlowScope.footer}" autoSubmit="true"></af:inputText>
+                            <af:inputText label="Number:" id="it2" value="#{pageFlowScope.num}" autoSubmit="true"></af:inputText>
+                            <af:button text="toPage no param" id="b2" action="toPageNoParam"></af:button>
+                            <af:button text="toPage with all parama" id="b3" action="toPageAllParam"></af:button>
+                            <af:button text="toPage with text parama" id="b1" action="toPageSomeTextOnly"/>
+                        </af:panelGroupLayout>
+                    </af:gridCell>
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6">
+                        <af:spacer width="10" height="10" id="s1"/>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:form>
+    </af:document>
+</f:view>

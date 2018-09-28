@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="indexPageDef"
+                Package="de.hahn.blog.taskflowparameter.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variable Name="varName" Type="java.lang.String"/>
+      <variable Name="varNum" Type="java.lang.Integer"/>
+      <variable Name="varTitle" Type="java.lang.String"/>
+      <variable Name="vatText" Type="java.lang.String"/>
+      <variable Name="varFooter" Type="java.lang.String"/>
+    </variableIterator>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="variables" id="varName1">
+      <AttrNames>
+        <Item Value="varName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="varNum1">
+      <AttrNames>
+        <Item Value="varNum"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="varTitle1">
+      <AttrNames>
+        <Item Value="varTitle"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="vatText1">
+      <AttrNames>
+        <Item Value="vatText"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="varFooter1">
+      <AttrNames>
+        <Item Value="varFooter"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

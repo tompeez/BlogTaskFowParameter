@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="param_page-btf">
+    <default-activity>decision</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <input-parameter-definition id="__9">
+      <name>decision</name>
+      <value>#{pageFlowScope.decision}</value>
+      <class>java.lang.String</class>
+      <required/>
+    </input-parameter-definition>
+    <input-parameter-definition id="__10">
+      <name>title</name>
+      <value>#{pageFlowScope.title}</value>
+      <class>java.lang.String</class>
+    </input-parameter-definition>
+    <input-parameter-definition id="__11">
+      <name>text</name>
+      <value>#{pageFlowScope.text}</value>
+      <class>java.lang.String</class>
+    </input-parameter-definition>
+    <input-parameter-definition id="__12">
+      <name>footer</name>
+      <value>#{pageFlowScope.footer}</value>
+      <class>java.lang.String</class>
+    </input-parameter-definition>
+    <input-parameter-definition id="__13">
+      <name>num</name>
+      <value>#{pageFlowScope.num}</value>
+      <class>java.lang,Integer</class>
+    </input-parameter-definition>
+    <router id="decision">
+      <case id="__7">
+        <expression>#{pageFlowScope.decision eq 'h'}</expression>
+        <outcome>horizontal</outcome>
+      </case>
+      <case id="__8">
+        <expression>#{pageFlowScope.decision eq 'v'}</expression>
+        <outcome>vertical</outcome>
+      </case>
+      <default-outcome>none</default-outcome>
+    </router>
+    <view id="horizontal">
+      <page>/horizontal.jsf</page>
+    </view>
+    <view id="vertical">
+      <page>/vertical.jsf</page>
+    </view>
+    <view id="none">
+      <page>/none.jsf</page>
+    </view>
+    <task-flow-return id="back">
+      <outcome>
+        <name>back</name>
+      </outcome>
+    </task-flow-return>
+    <control-flow-rule id="__1">
+      <from-activity-id>decision</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>horizontal</from-outcome>
+        <to-activity-id>horizontal</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__3">
+        <from-outcome>vertical</from-outcome>
+        <to-activity-id>vertical</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__4">
+        <from-outcome>none</from-outcome>
+        <to-activity-id>none</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__5">
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case id="__6">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>back</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-config>
